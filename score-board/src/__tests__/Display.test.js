@@ -2,7 +2,7 @@ import React from 'react';
 import { render, getByTestId } from '@testing-library/react';
 import '@testing-library/react/cleanup-after-each'; // auto clean up after each test
 
-import Display from './Display';
+import Display from '../components/Display';
 
 it('should render', () => {
     render(<Display />);

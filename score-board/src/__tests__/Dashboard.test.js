@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/react/cleanup-after-each'; // auto clean up after each test
 import "jest-dom/extend-expect";
 
-import Dashboard from './Dashboard';
+import Dashboard from '../components/Dashboard';
 
 it('should render', () => {
     render(<Dashboard />);
