@@ -8,3 +8,9 @@ import App from './App';
 it('renders without crashing', () => {
   render(<App />);
 });
+
+it('displays wrapper divs for display and dashboard', () => {
+  const { getAllByTestId } = render(<App />);
+  const wrapperDivs = getAllByTestId('wrapper'); 
+  expect(wrapperDivs.length).toBe(2);
+});

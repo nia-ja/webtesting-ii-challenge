@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Display from './components/Display';
 import Dashboard from './components/Dashboard';
 
@@ -7,7 +8,8 @@ class App extends Component {
     balls: 0,
     strikes: 0
   };
-  // methods for dashboard component
+
+  // METHODS for dashboard component
 
   // strike - reset to 0 when a player reaches 3 strikes
   strike = () => {
@@ -27,6 +29,10 @@ class App extends Component {
     }
   }
 
+  // foul - increases strikes up to 2:
+  // no strikes -> a foul makes it 1 strike
+  // 1 strike -> a foul makes it 2 strikes
+  // 2 strikes -> a foul has no effect, count stays at 2 strikes
   foul = () => {
     if (this.state.strikes < 2) {
       this.setState({ strikes: this.state.strikes + 1 });
@@ -41,7 +47,10 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        {/* displays users balls / strikes */}
         <Display balls={this.state.balls} strikes={this.state.strikes} />
+
+        {/* action buttons */}
         <Dashboard strike={this.strike} ball={this.ball} foul={this.foul} hit={this.hit} />
       </div>
     );

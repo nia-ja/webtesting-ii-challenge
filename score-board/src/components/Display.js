@@ -2,9 +2,9 @@ import React from 'react';
 
 function Display(props) {
     return (
-        <div className="display=wrapper">
-            <p>Balls: {props.balls}</p>
-            <p>Strikes: {props.strikes}</p>
+        <div data-testid="wrapper" className="display=wrapper">
+            <p data-testid="display-field">Balls: {props.balls}</p>
+            <p data-testid="display-field">Strikes: {props.strikes}</p>
         </div>
     );
 }
