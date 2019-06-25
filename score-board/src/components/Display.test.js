@@ -10,7 +10,7 @@ it('should render', () => {
 
 it('should render 2 fields inside div', () => {
     const {getAllByTestId} = render(<Display />);
-    const fields = getAllByTestId('display-field');
+    const fields = [...getAllByTestId('balls'), ...getAllByTestId('strikes')];
     expect(fields.length).toBe(2);
 });
 
@@ -23,11 +23,9 @@ it('should display count of balls and strikes', () => {
 
     const {getAllByTestId} = render(<Display balls={testBalls} strikes={testStrikes}/>);
     // get actual rendered fields
-    const fields = getAllByTestId('display-field');
+    const fields = [...getAllByTestId('balls'), ...getAllByTestId('strikes')];
     // create an array with rendered text
     const fieldsTexts = fields.map(f => f.textContent);
     // compare expected and actual results 
     expect(expectedFields).toEqual(fieldsTexts);
 });
-
-// should be updated when the user records activity on the `Dashboard` component
